@@ -1,26 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
+import Team from './Team';
+import MemberList from './MemberList';
 import './App.css';
 
 function App() {
+
+  const [team, setTeam] = useState([
+    {
+      name: 'Jason',
+      email: 'jason@json.com',
+      role: 'Instructor',
+    },
+    {
+      name: 'Don',
+      email: 'Don@lambda.com',
+      role: 'SL',
+    },
+    {
+      name: 'Raul',
+      email: 'raulortizarts@gmail.com',
+      role: 'Student',
+    },
+  ])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+   
+  <div>
+      <MemberList team={team} />
+      <Team team={team} setTeam={setTeam} />
     </div>
-  );
+  )
+
 }
 
 export default App;
